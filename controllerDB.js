@@ -2,15 +2,14 @@
 
 const config = require("./config");
 const mysql = require("mysql");
-const DAO = require("./dao");
+const dbDAO = require("./dbDAO");
 const HttpStatus = require('http-status-codes');
 
-// Create a connection pool to the MySQL database
 const pool = mysql.createPool(config.mysqlConfig);
 
-const dao = new DAO(pool);
+const dao = new dbDAO(pool);
 
-class Controller{
+class ControllerDB {
 
     constructor(pool) {
         this.pool = pool;
@@ -100,4 +99,4 @@ class Controller{
 
 }
 
-module.exports = Controller;
+module.exports = ControllerDB;

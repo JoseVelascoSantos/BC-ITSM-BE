@@ -1,6 +1,6 @@
 "use strict";
 
-class DAO {
+class dbDAO {
     constructor(pool) {
         this.pool = pool;
     }
@@ -111,4 +111,4 @@ class DAO {
     }
 }
 
-module.exports = DAO;
+module.exports = dbDAO;

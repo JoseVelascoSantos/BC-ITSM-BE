@@ -40,6 +40,24 @@ class dbDAO {
         });
     }
 
+    createCustomer(customer, callback) {
+        this.pool.getConnection((err, connection) => {
+            if (err) callback(new Error());
+            else {
+                connection.query(
+                    'INSERT INTO customer VALUES (?, ?, ?, ?, ?, ?, ?, ? ,?, ?)',
+                    [customer.ethAddress, customer.dni, customer.name, customer.surname, customer.email, customer.phone, 0, customer.province, customer.city, 0],
+                    (err) => {
+                        connection.release();
+                        if (err) callback(new Error());
+                        else callback(null, true);
+                    }
+                );
+
+            }
+        });
+    }
+
     getCompanies(callback) {
         this.pool.getConnection((err, connection) => {
             if (err) callback(new Error());
@@ -75,6 +93,24 @@ class dbDAO {
         });
     }
 
+    createCompany(company, callback) {
+        this.pool.getConnection((err, connection) => {
+            if (err) callback(new Error());
+            else {
+                connection.query(
+                    'INSERT INTO company VALUES (?, ?, ?)',
+                    [company.cif, company.name, company.address],
+                    (err) => {
+                        connection.release();
+                        if (err) callback(new Error());
+                        else callback(null, true);
+                    }
+                );
+
+            }
+        });
+    }
+
     getSLAs(callback) {
         this.pool.getConnection((err, connection) => {
             if (err) callback(new Error());
@@ -103,6 +139,24 @@ class dbDAO {
                         connection.release();
                         if (err) callback(new Error());
                         else callback(null, rows[0]);
+                    }
+                );
+
+            }
+        });
+    }
+
+    createSLA(sla, callback) {
+        this.pool.getConnection((err, connection) => {
+            if (err) callback(new Error());
+            else {
+                connection.query(
+                    'INSERT INTO sla VALUES (?, ?, ?)',
+                    [sla.id, sla.customer, sla.company],
+                    (err) => {
+                        connection.release();
+                        if (err) callback(new Error());
+                        else callback(null, true);
                     }
                 );
 

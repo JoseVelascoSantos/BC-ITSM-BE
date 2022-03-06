@@ -37,6 +37,27 @@ class ControllerDB {
         });
     }
 
+    createCustomer = (request, response, next) => {
+        dao.createCustomer({
+            ethAddress: request.query.ethAddress,
+            dni: request.query.dni,
+            name: request.query.name,
+            surname: request.query.surname,
+            email: request.query.email,
+            phone: request.query.phone,
+            province: request.query.province,
+            city: request.query.city,
+        }, (err, result) => {
+            if (err) next(err);
+            else if (!result) {
+                response.sendStatus(HttpStatus.NOT_FOUND);
+            } else {
+                response.status(HttpStatus.OK);
+                response.send(result);
+            }
+        });
+    }
+
     companies = (request, response, next) => {
         dao.getCompanies((err, result) => {
             if (err) next(err);
@@ -49,6 +70,22 @@ class ControllerDB {
 
     company = (request, response, next) => {
         dao.getCompany(request.query.cif, (err, result) => {
+            if (err) next(err);
+            else if (!result) {
+                response.sendStatus(HttpStatus.NOT_FOUND);
+            } else {
+                response.status(HttpStatus.OK);
+                response.send(result);
+            }
+        });
+    }
+
+    createCompany = (request, response, next) => {
+        dao.createCompany({
+            cif: request.query.cif,
+            name: request.query.name,
+            address: request.query.address,
+        }, (err, result) => {
             if (err) next(err);
             else if (!result) {
                 response.sendStatus(HttpStatus.NOT_FOUND);
@@ -93,6 +130,22 @@ class ControllerDB {
                         });
                     }
                 });
+            }
+        });
+    }
+
+    createSLA = (request, response, next) => {
+        dao.createSLA({
+            id: request.query.id,
+            customer: request.query.customer,
+            company: request.query.company,
+        }, (err, result) => {
+            if (err) next(err);
+            else if (!result) {
+                response.sendStatus(HttpStatus.NOT_FOUND);
+            } else {
+                response.status(HttpStatus.OK);
+                response.send(result);
             }
         });
     }

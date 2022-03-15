@@ -151,8 +151,8 @@ class dbDAO {
             if (err) callback(new Error());
             else {
                 connection.query(
-                    'INSERT INTO sla VALUES (?, ?, ?)',
-                    [sla.id, sla.customer, sla.company],
+                    'INSERT INTO sla VALUES (?, ?, ?, ?)',
+                    [sla.id, sla.customer, sla.company, sla.price],
                     (err) => {
                         connection.release();
                         if (err) callback(new Error());

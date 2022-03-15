@@ -11,6 +11,10 @@ class ControllerEthereum {
             if (err) next(err);
             else {
                 response.status(HttpStatus.OK);
+
+                //TODO This is just for develop
+                response.set('Access-Control-Allow-Origin', '*');
+
                 response.send(result);
             }
         });
@@ -21,6 +25,10 @@ class ControllerEthereum {
             if (err) next(err);
             else {
                 response.status(HttpStatus.OK);
+
+                //TODO This is just for develop
+                response.set('Access-Control-Allow-Origin', '*');
+
                 response.send(result);
             }
         });

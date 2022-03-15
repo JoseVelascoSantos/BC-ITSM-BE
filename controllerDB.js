@@ -20,6 +20,10 @@ class ControllerDB {
             if (err) next(err);
             else {
                 response.status(HttpStatus.OK);
+
+                //TODO This is just for develop
+                response.set('Access-Control-Allow-Origin', '*');
+
                 response.send({customers: result});
             }
         });
@@ -32,6 +36,10 @@ class ControllerDB {
                 response.sendStatus(HttpStatus.NOT_FOUND);
             } else {
                 response.status(HttpStatus.OK);
+
+                //TODO This is just for develop
+                response.set('Access-Control-Allow-Origin', '*');
+
                 response.send(result);
             }
         });
@@ -53,6 +61,10 @@ class ControllerDB {
                 response.sendStatus(HttpStatus.NOT_FOUND);
             } else {
                 response.status(HttpStatus.OK);
+
+                //TODO This is just for develop
+                response.set('Access-Control-Allow-Origin', '*');
+
                 response.send(result);
             }
         });
@@ -63,6 +75,10 @@ class ControllerDB {
             if (err) next(err);
             else {
                 response.status(HttpStatus.OK);
+
+                //TODO This is just for develop
+                response.set('Access-Control-Allow-Origin', '*');
+
                 response.send({companies: result});
             }
         });
@@ -75,6 +91,10 @@ class ControllerDB {
                 response.sendStatus(HttpStatus.NOT_FOUND);
             } else {
                 response.status(HttpStatus.OK);
+
+                //TODO This is just for develop
+                response.set('Access-Control-Allow-Origin', '*');
+
                 response.send(result);
             }
         });
@@ -91,6 +111,10 @@ class ControllerDB {
                 response.sendStatus(HttpStatus.NOT_FOUND);
             } else {
                 response.status(HttpStatus.OK);
+
+                //TODO This is just for develop
+                response.set('Access-Control-Allow-Origin', '*');
+
                 response.send(result);
             }
         });
@@ -101,6 +125,10 @@ class ControllerDB {
             if (err) next(err);
             else {
                 response.status(HttpStatus.OK);
+
+                //TODO This is just for develop
+                response.set('Access-Control-Allow-Origin', '*');
+
                 response.send({slas: result});
             }
         });
@@ -125,6 +153,10 @@ class ControllerDB {
                             } else {
                                 result.company = __result;
                                 response.status(HttpStatus.OK);
+
+                                //TODO This is just for develop
+                                response.set('Access-Control-Allow-Origin', '*');
+
                                 response.send(result);
                             }
                         });
@@ -139,6 +171,7 @@ class ControllerDB {
             id: request.query.id,
             customer: request.query.customer,
             company: request.query.company,
+            price: request.query.price,
         }, (err, result) => {
             if (err) next(err);
             else if (!result) {

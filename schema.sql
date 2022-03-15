@@ -27,6 +27,7 @@ create table sla
         primary key,
     customer varchar(42) null,
     company  varchar(9)  null,
+    price  int null,
     constraint sla_fk_company
         foreign key (company) references company (cif)
             on update cascade on delete cascade,

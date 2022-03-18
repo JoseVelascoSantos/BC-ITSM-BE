@@ -21,7 +21,7 @@ class ControllerEthereum {
     }
 
     sla = (request, response, next) => {
-        dao.getSLA(request.query.id, (err, result) => {
+        dao.getSLA(request.params.id, (err, result) => {
             if (err) next(err);
             else {
                 response.status(HttpStatus.OK);

@@ -28,7 +28,7 @@ class customersDAO {
             if (err) callback(new Error());
             else {
                 connection.query(
-                    'SELECT * FROM customer WHERE eth_address = ?',
+                    'SELECT * FROM customer WHERE ethAddress = ?',
                     ethAddress,
                     (err, rows) => {
                         connection.release();
@@ -63,7 +63,7 @@ class customersDAO {
             if (err) callback(new Error());
             else {
                 connection.query(
-                    'UPDATE customer SET DNI = ?, name = ?, surname = ?, email = ?, phone = ?, gender = ?, province = ?, city = ?, country = ? WHERE eth_address = ?',
+                    'UPDATE customer SET DNI = ?, name = ?, surname = ?, email = ?, phone = ?, gender = ?, province = ?, city = ?, country = ? WHERE ethAddress = ?',
                     [customer.dni, customer.name, customer.surname, customer.email, customer.phone, 0, customer.province, customer.city, 0, customer.ethAddress],
                     (err) => {
                         connection.release();
@@ -81,7 +81,7 @@ class customersDAO {
             if (err) callback(new Error());
             else {
                 connection.query(
-                    'DELETE FROM customer WHERE eth_address = ?',
+                    'DELETE FROM customer WHERE ethAddress = ?',
                     ethAddress,
                     (err) => {
                         connection.release();

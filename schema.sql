@@ -8,7 +8,7 @@ create table company
 
 create table customer
 (
-    eth_address varchar(42)  not null
+    ethAddress varchar(42)  not null
         primary key,
     dni         varchar(10)  null,
     name        varchar(255) null,
@@ -32,7 +32,7 @@ create table sla
         foreign key (company) references company (cif)
             on update cascade on delete cascade,
     constraint sla_fk_customer
-        foreign key (customer) references customer (eth_address)
+        foreign key (customer) references customer (ethAddress)
             on update cascade on delete cascade
 );
 

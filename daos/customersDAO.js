@@ -11,7 +11,7 @@ class customersDAO {
             else {
                 connection.query(
                     'INSERT INTO customer VALUES (?, ?, ?, ?, ?, ?, ?, ? ,?, ?)',
-                    [customer.ethAddress, customer.dni, customer.name, customer.surname, customer.email, customer.phone, 0, customer.province, customer.city, 0],
+                    [customer.ethAddress, customer.dni, customer.name, customer.surname, customer.email, customer.phone, Number(customer.gender), customer.province, customer.city, customer.country],
                     (err) => {
                         connection.release();
                         if (err) callback(new Error());
@@ -50,7 +50,10 @@ class customersDAO {
                     (err, rows) => {
                         connection.release();
                         if (err) callback(new Error());
-                        else callback(null, rows);
+                        else {
+                            rows.map(row => row.gender = row.gender[0]);
+                            callback(null, rows);
+                        }
                     }
                 );
 
@@ -64,7 +67,7 @@ class customersDAO {
             else {
                 connection.query(
                     'UPDATE customer SET DNI = ?, name = ?, surname = ?, email = ?, phone = ?, gender = ?, province = ?, city = ?, country = ? WHERE ethAddress = ?',
-                    [customer.dni, customer.name, customer.surname, customer.email, customer.phone, 0, customer.province, customer.city, 0, customer.ethAddress],
+                    [customer.dni, customer.name, customer.surname, customer.email, customer.phone, Number(customer.gender), customer.province, customer.city, customer.country, customer.ethAddress],
                     (err) => {
                         connection.release();
                         if (err) callback(new Error());

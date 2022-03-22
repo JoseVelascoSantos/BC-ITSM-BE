@@ -64,7 +64,7 @@ class customersDAO {
             else {
                 connection.query(
                     'UPDATE sla SET customer = ?, company = ?, price = ? WHERE id = ?',
-                    [sla.customer, sla.company, sla.price, sla.id],
+                    [sla.customer, sla.company, Number(sla.price), sla.id],
                     (err) => {
                         connection.release();
                         if (err) callback(new Error());

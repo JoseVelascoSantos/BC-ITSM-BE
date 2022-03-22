@@ -32,10 +32,12 @@ class CustomersController {
             dni: request.query.dni,
             name: request.query.name,
             surname: request.query.surname,
+            gender: request.query.gender,
             email: request.query.email,
             phone: request.query.phone,
             province: request.query.province,
             city: request.query.city,
+            country: request.query.country,
         }, callBack(response, next));
     }
 
@@ -53,10 +55,12 @@ class CustomersController {
             dni: request.query.dni,
             name: request.query.name,
             surname: request.query.surname,
+            gender: request.query.gender,
             email: request.query.email,
             phone: request.query.phone,
             province: request.query.province,
             city: request.query.city,
+            country: request.query.country,
         }, callBack(response, next));
     }
 

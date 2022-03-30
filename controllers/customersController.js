@@ -38,6 +38,7 @@ class CustomersController {
             province: request.query.province,
             city: request.query.city,
             country: request.query.country,
+            company: request.query.company,
         }, callBack(response, next));
     }
 
@@ -61,6 +62,7 @@ class CustomersController {
             province: request.query.province,
             city: request.query.city,
             country: request.query.country,
+            company: request.query.company,
         }, callBack(response, next));
     }
 

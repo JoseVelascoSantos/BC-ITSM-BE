@@ -18,7 +18,11 @@ create table customer
     gender      bit          null,
     province    varchar(255) null,
     city        varchar(255) null,
-    country     int          null
+    country     int          null,
+    company     varchar(9)   not null,
+    constraint customer_fk_company
+        foreign key (company) references company (cif)
+            on update cascade on delete cascade
 );
 
 create table sla

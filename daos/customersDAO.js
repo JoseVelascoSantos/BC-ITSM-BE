@@ -10,8 +10,8 @@ class customersDAO {
             if (err) callback(new Error());
             else {
                 connection.query(
-                    'INSERT INTO customer VALUES (?, ?, ?, ?, ?, ?, ?, ? ,?, ?)',
-                    [customer.ethAddress, customer.dni, customer.name, customer.surname, customer.email, customer.phone, Number(customer.gender), customer.province, customer.city, customer.country],
+                    'INSERT INTO customer VALUES (?, ?, ?, ?, ?, ?, ?, ? ,?, ?, ?)',
+                    [customer.ethAddress, customer.dni, customer.name, customer.surname, customer.email, customer.phone, Number(customer.gender), customer.province, customer.city, customer.country, customer.company],
                     (err) => {
                         connection.release();
                         if (err) callback(new Error());
@@ -33,7 +33,10 @@ class customersDAO {
                     (err, rows) => {
                         connection.release();
                         if (err) callback(new Error());
-                        else callback(null, rows[0]);
+                        else {
+                            if (rows[0]) rows[0].gender = rows[0].gender[0];
+                            callback(null, rows[0]);
+                        }
                     }
                 );
 
@@ -66,8 +69,8 @@ class customersDAO {
             if (err) callback(new Error());
             else {
                 connection.query(
-                    'UPDATE customer SET DNI = ?, name = ?, surname = ?, email = ?, phone = ?, gender = ?, province = ?, city = ?, country = ? WHERE ethAddress = ?',
-                    [customer.dni, customer.name, customer.surname, customer.email, customer.phone, Number(customer.gender), customer.province, customer.city, customer.country, customer.ethAddress],
+                    'UPDATE customer SET DNI = ?, name = ?, surname = ?, email = ?, phone = ?, gender = ?, province = ?, city = ?, country = ?, company = ? WHERE ethAddress = ?',
+                    [customer.dni, customer.name, customer.surname, customer.email, customer.phone, Number(customer.gender), customer.province, customer.city, customer.country, customer.company, customer.ethAddress],
                     (err) => {
                         connection.release();
                         if (err) callback(new Error());

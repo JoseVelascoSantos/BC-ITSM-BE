@@ -32,7 +32,7 @@ class companiesDAO {
                     cif,
                     (err, rows) => {
                         connection.release();
-                        if (err) callback(new Error());
+                        if (err || rows.length === 0) callback(new Error());
                         else callback(null, rows[0]);
                     }
                 );

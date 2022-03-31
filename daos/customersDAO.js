@@ -32,7 +32,7 @@ class customersDAO {
                     ethAddress,
                     (err, rows) => {
                         connection.release();
-                        if (err) callback(new Error());
+                        if (err || rows.length === 0) callback(new Error());
                         else {
                             if (rows[0]) rows[0].gender = rows[0].gender[0];
                             callback(null, rows[0]);

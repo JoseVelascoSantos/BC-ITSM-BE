@@ -40,3 +40,13 @@ create table sla
             on update cascade on delete cascade
 );
 
+create table contactRequest
+(
+    id     int auto_increment   not null primary key,
+    firstName    varchar(255) not null,
+    lastName    varchar(255) not null,
+    email    varchar(255) not null,
+    ethAddress    varchar(42),
+    subject    varchar(255) not null,
+    message    varchar(255) not null
+);

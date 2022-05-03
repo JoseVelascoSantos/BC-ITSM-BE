@@ -10,6 +10,7 @@ module.exports = {
     port: 2000,
     contractAddress: '0xBB4792d84F31AB9C7AA5c537A2537Dc546a018c7',
     ethereumHost: 'https://rinkeby.infura.io/v3/81180162079b4ba49d02599e949fff5a',
+    theGraphAPI: 'https://api.studio.thegraph.com/query/26123/slinkv6/3',
     abi: [
         {
             "inputs": [],

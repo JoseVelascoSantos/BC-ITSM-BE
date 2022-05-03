@@ -12,6 +12,7 @@ const customersRouter = require('./routers/customersRouter');
 const companyRouter = require('./routers/companiesRouter');
 const slaRouter = require('./routers/slasRouter');
 const contactRequestsRouter = require('./routers/contactRequestsRouter');
+const theGraphRouter = require('./routers/theGraphRouter');
 const bodyParser = require('body-parser');
 
 const app = express();
@@ -29,6 +30,7 @@ app.use('/customers', customersRouter.router);
 app.use('/companies', companyRouter.router);
 app.use('/slas', slaRouter.router);
 app.use('/contactRequests', contactRequestsRouter.router);
+app.use('/theGraph', theGraphRouter.router);
 
 app.listen(config.port, function (err) {
     if (err) {

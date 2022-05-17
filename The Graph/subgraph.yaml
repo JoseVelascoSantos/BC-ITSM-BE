@@ -1,0 +1,45 @@
+specVersion: 0.0.2
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: Slink
+    network: rinkeby
+    source:
+      address: "0x03eeC2cc89624169951C03d2379fefBd5fc060BB"
+      abi: Slink
+      startBlock: 10685684
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.5
+      language: wasm/assemblyscript
+      entities:
+        - Service
+        - ExtraService
+        - ServiceSpace
+        - License
+        - RevisionReport
+        - Billing
+        - BillingMethod
+        - SLA
+      abis:
+        - name: Slink
+          file: ./abis/Slink.json
+      eventHandlers:
+        - event: BillingCreated(uint256,string)
+          handler: handleBillingCreated
+        - event: BillingMethodCreated(uint256,string)
+          handler: handleBillingMethodCreated
+        - event: ExtraServiceCreated(uint256,string,string)
+          handler: handleExtraServiceCreated
+        - event: LicenseCreated(uint256,string)
+          handler: handleLicenseCreated
+        - event: RevisionReportCreated(uint256,string)
+          handler: handleRevisionReportCreated
+        - event: SLACreated(uint256,address,uint256,bool,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256)
+          handler: handleSLACreated
+        - event: ServiceCreated(uint256,string,string)
+          handler: handleServiceCreated
+        - event: ServiceSpaceCreated(uint256,string,string,string)
+          handler: handleServiceSpaceCreated
+      file: ./src/mapping.ts

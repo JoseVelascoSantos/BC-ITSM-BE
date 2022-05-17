@@ -22,6 +22,12 @@ const callBack = (response, next) => (err, result) => {
 
 class TheGraphController {
 
+    readSLAByID = async (request, response, next) => {
+        await dao.readSLAByID({
+            id: Number(request.params.id)
+        }, callBack(response, next));
+    }
+
     readSLAsByDateRange = async (request, response, next) => {
         await dao.readSLAsByDateRange({
             start: Number(request.query.start),

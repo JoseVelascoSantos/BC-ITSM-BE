@@ -8,9 +8,9 @@ module.exports = {
         multipleStatements: true
     },
     port: 2000,
-    contractAddress: '0xBB4792d84F31AB9C7AA5c537A2537Dc546a018c7',
+    contractAddress: '0x03eeC2cc89624169951C03d2379fefBd5fc060BB',
     ethereumHost: 'https://rinkeby.infura.io/v3/81180162079b4ba49d02599e949fff5a',
-    theGraphAPI: 'https://api.studio.thegraph.com/query/26123/slinkv6/3',
+    theGraphAPI: 'https://api.studio.thegraph.com/query/26123/slink/1',
     abi: [
         {
             "inputs": [],

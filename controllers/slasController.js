@@ -74,19 +74,6 @@ class SLAsController {
     readSLAs = (request, response, next) => {
         slaDAO.readSLAs(callBack(response, next));
     }
-
-    updateSLA = (request, response, next) => {
-        slaDAO.updateSLA({
-            id: request.params.id,
-            customer: request.query.customer,
-            company: request.query.company,
-            price: request.query.price,
-        }, callBack(response, next));
-    }
-
-    deleteSLA = (request, response, next) => {
-        slaDAO.deleteSLA(request.params.id, callBack(response, next));
-    }
 }
 
 module.exports = SLAsController;

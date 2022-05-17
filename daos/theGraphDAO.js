@@ -13,6 +13,15 @@ class theGraphDAO {
         return Math.round(milliseconds / 1000);
     }
 
+    async readSLAByID(request, callback) {
+        let query = {query: `query { slas(where : {id: "${request.id}"}) { id customer creationDate startDate automaticRenewal service { id } extraService { id } serviceSpace { id } license { id } revisionReport { id } billing { id } billingMethod { id } totalPrice } }`};
+        const response = await axios.post(config.theGraphAPI, query);
+        if (response.data.data) {
+            response.data.data.slas[0].creationDate = this._secondsToMilliseconds(response.data.data.slas[0].creationDate);
+            callback(null, response.data.data.slas[0]);
+        } else callback(new Error());
+    }
+
     async readSLAsByDateRange(request, callback) {
         let query;
 

@@ -7,6 +7,7 @@ const TheGraphController = require('../controllers/theGraphController');
 const theGraphController = new TheGraphController();
 
 router.get('/slas', theGraphController.readSLAsByDateRange);
+router.get('/slas/:id', theGraphController.readSLAByID);
 router.get('/services/:id', theGraphController.readSLAsWithServiceBySLADateRange);
 router.get('/services/', theGraphController.readSLAsWithServicesBySLADateRange);
 router.get('/extraServices/:id', theGraphController.readSLAsWithExtraServiceBySLADateRange);

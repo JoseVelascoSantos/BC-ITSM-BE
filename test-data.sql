@@ -45,7 +45,7 @@ insert into customer (ethAddress, dni, name, surname, email, phone, gender, prov
 insert into customer (ethAddress, dni, name, surname, email, phone, gender, province, city, country, company) values ('0x3fc99a23a37d15ac24be68b77390a5261fc4aabc', '83-7200528', 'Abram', 'Wray', 'awrayn@stanford.edu', '2076386138', 1, '4069 Stang Terrace', 'Oktyabr’sk', 63, '183722448');
 insert into customer (ethAddress, dni, name, surname, email, phone, gender, province, city, country, company) values ('0x2496122aa269449d8c194843fb5f015ed767c8de', '17-1118841', 'Syd', 'Dewerson', 'sdewersono@goo.ne.jp', '6352653410', 1, '2 Mifflin Road', 'Guanzhuang', 74, '832605189');
 INSERT INTO customer VALUES ('0x1663b5f5A048B8bc99449Ff3E2A6E0fbfe8069ac','27699988F','José','Velasco Santos','jovelasc@ucm.es','666555444',0,'Madrid','Madrid',0,'U97133888');
-INSERT INTO customer VALUES ('0x9a13C9B82b2C86AB6e7753C66d31a95f2860c126','Y7166898C','Yule','Zhang','yulzhang@ucm.es','555444333',1,'Madrid','Madrid',0,'U97133888');
+INSERT INTO customer VALUES ('0x9a13C9B82b2C86AB6e7753C66d31a95f2860c126','Y7166898C','Yule','Zhang','yulzhang@ucm.es','555444333',1,'Madrid','Madrid',0,'01234567A');
 INSERT INTO customer VALUES ('0x73e84531bF7B80A92812a56f6FbdC43510AFD1dD','23445454J','Margarita','Robles','margarob@gmail.com','111222333',1,'Sevilla','Sevilla',0,'W3592495J');
 INSERT INTO customer VALUES ('0xf113b49f5dcC1edF65F4392425A3aCE9c73bB8db','96040495Q','Manolo','Bakes','mankes@gmail.com','999888777',0,'Barcelona','Barcelona',0,'B10968972');
 

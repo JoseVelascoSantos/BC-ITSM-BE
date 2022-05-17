@@ -1,0 +1,71 @@
+enum Sort {
+  asc
+  desc
+}
+
+type Billing @entity {
+  id: ID!
+  name: String! # string
+  slas: [SLA!]! @derivedFrom(field: "billing")
+}
+
+type BillingMethod @entity {
+  id: ID!
+  name: String! # string
+  slas: [SLA!]! @derivedFrom(field: "billingMethod")
+}
+
+type ExtraService @entity {
+  id: ID!
+  name: String! # string
+  description: String! # string
+  slas: [SLA!]! @derivedFrom(field: "extraService")
+}
+
+type License @entity {
+  id: ID!
+  name: String! # string
+  slas: [SLA!]! @derivedFrom(field: "license")
+}
+
+type RevisionReport @entity {
+  id: ID!
+  name: String! # string
+  slas: [SLA!]! @derivedFrom(field: "revisionReport")
+}
+
+type SLA @entity {
+  id: ID!
+  customer: Bytes! # address
+  creationDate: BigInt!
+  startDate: BigInt! # uint256
+  automaticRenewal: Boolean! # bool
+  service: Service!
+  extraService: ExtraService!
+  serviceSpace: ServiceSpace!
+  license: License!
+  revisionReport: RevisionReport!
+  billing: Billing!
+  billingMethod: BillingMethod!
+  totalPrice: BigInt! # uint256
+}
+
+input SLAOrderByInput {
+  startDate: Sort
+  totalPrice: Sort
+}
+
+type Service @entity {
+  id: ID!
+  name: String! # string
+  description: String! # string
+  slas: [SLA!]! @derivedFrom(field: "service")
+}
+
+type ServiceSpace @entity {
+  id: ID!
+  name: String! # string
+  startTime: String! # string
+  endTime: String! # string
+  slas: [SLA!]! @derivedFrom(field: "serviceSpace")
+}

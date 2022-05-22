@@ -1,0 +1,780 @@
+{
+	"info": {
+		"_postman_id": "d3b2bd9d-f855-4f28-91a1-9473b3008081",
+		"name": "TFG API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10193377"
+	},
+	"item": [
+		{
+			"name": "Ethereum",
+			"item": [
+				{
+					"name": "Get provider",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{protocol}}://{{host}}{{port}}/bc/provider",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"bc",
+								"provider"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get sla",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{protocol}}://{{host}}{{port}}/bc/sla/1",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"bc",
+								"sla",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Customers",
+			"item": [
+				{
+					"name": "Create customer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{protocol}}://{{host}}{{port}}/customers?ethAddress=0x1663b5f5A048B8bc99449Ff3E2A6E0fbfe8069ac&name=José&surname=Velasco Santos&dni=27699988F&email=jovelasc@ucm.es&phone=666555444&province=Madrid&city=Madrid&company=U97133888",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"customers"
+							],
+							"query": [
+								{
+									"key": "ethAddress",
+									"value": "0x1663b5f5A048B8bc99449Ff3E2A6E0fbfe8069ac"
+								},
+								{
+									"key": "name",
+									"value": "José"
+								},
+								{
+									"key": "surname",
+									"value": "Velasco Santos"
+								},
+								{
+									"key": "dni",
+									"value": "27699988F"
+								},
+								{
+									"key": "email",
+									"value": "jovelasc@ucm.es"
+								},
+								{
+									"key": "phone",
+									"value": "666555444"
+								},
+								{
+									"key": "province",
+									"value": "Madrid"
+								},
+								{
+									"key": "city",
+									"value": "Madrid"
+								},
+								{
+									"key": "company",
+									"value": "U97133888"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get customer",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{protocol}}://{{host}}{{port}}/customers/0x73e84531bF7B80A92812a56f6FbdC43510AFD1dD",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"customers",
+								"0x73e84531bF7B80A92812a56f6FbdC43510AFD1dD"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get customers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{protocol}}://{{host}}{{port}}/customers",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"customers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete customer",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{protocol}}://{{host}}{{port}}/customers/0x1663b5f5A048B8bc99449Ff3E2A6E0fbfe8069ac",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"customers",
+								"0x1663b5f5A048B8bc99449Ff3E2A6E0fbfe8069ac"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update customer",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{protocol}}://{{host}}{{port}}/customers/0x7a9AC18769eF19E64619E80823d2DE8007c06ef5?name=Yulee&surname=Zhang&dni=012345678&email=deada@.dede&phone=123456789&province=Madrid&city=Madrid&company=U97133888",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"customers",
+								"0x7a9AC18769eF19E64619E80823d2DE8007c06ef5"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Yulee"
+								},
+								{
+									"key": "surname",
+									"value": "Zhang"
+								},
+								{
+									"key": "dni",
+									"value": "012345678"
+								},
+								{
+									"key": "email",
+									"value": "deada@.dede"
+								},
+								{
+									"key": "phone",
+									"value": "123456789"
+								},
+								{
+									"key": "province",
+									"value": "Madrid"
+								},
+								{
+									"key": "city",
+									"value": "Madrid"
+								},
+								{
+									"key": "company",
+									"value": "U97133888"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Companies",
+			"item": [
+				{
+					"name": "Create company",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{protocol}}://{{host}}{{port}}/companies?cif=U97133888&name=FdI - UCM&address=Ciudad Universitaria Madrid",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"companies"
+							],
+							"query": [
+								{
+									"key": "cif",
+									"value": "U97133888"
+								},
+								{
+									"key": "name",
+									"value": "FdI - UCM"
+								},
+								{
+									"key": "address",
+									"value": "Ciudad Universitaria Madrid"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get company",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{protocol}}://{{host}}{{port}}/companies/U97133888",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"companies",
+								"U97133888"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get companies",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{protocol}}://{{host}}{{port}}/companies",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"companies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update company",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{protocol}}://{{host}}{{port}}/companies/U97133888?name=Facultad de Informática UCM&address=Calle Uno",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"companies",
+								"U97133888"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Facultad de Informática UCM"
+								},
+								{
+									"key": "address",
+									"value": "Calle Uno"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete company",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{protocol}}://{{host}}{{port}}/companies/U97133888",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"companies",
+								"U97133888"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Contact requests",
+			"item": [
+				{
+					"name": "Create contact request",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{protocol}}://{{host}}{{port}}/contactRequests?firstName=Yule&lastName=Zhang&email=yule@ucm.es&ethAddress=0x4b434B0745D97414387916920B68BBEB6A2fd4d8&subject=Me gustaría probar SLink&message=Hola! Deseo probar SLink con sus increíbles beneficios de Blockchain.",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"contactRequests"
+							],
+							"query": [
+								{
+									"key": "firstName",
+									"value": "Yule"
+								},
+								{
+									"key": "lastName",
+									"value": "Zhang"
+								},
+								{
+									"key": "email",
+									"value": "yule@ucm.es"
+								},
+								{
+									"key": "ethAddress",
+									"value": "0x4b434B0745D97414387916920B68BBEB6A2fd4d8"
+								},
+								{
+									"key": "subject",
+									"value": "Me gustaría probar SLink"
+								},
+								{
+									"key": "message",
+									"value": "Hola! Deseo probar SLink con sus increíbles beneficios de Blockchain."
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get contact requests",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{protocol}}://{{host}}{{port}}/contactRequests",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"contactRequests"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete contact request",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{protocol}}://{{host}}{{port}}/contactRequests/2",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"contactRequests",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "SLAs",
+			"item": [
+				{
+					"name": "Get SLA",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{protocol}}://{{host}}{{port}}/slas/1652745911",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"slas",
+								"1652745911"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get SLAs",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{protocol}}://{{host}}{{port}}/slas",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"slas"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "The Graph",
+			"item": [
+				{
+					"name": "Get services",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "{\n  services(first: 5) {\n    id\n    name\n    description\n    slas {\n      id\n    }\n  }\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "{{graphTestURL}}",
+							"host": [
+								"{{graphTestURL}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get extra services",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "{\n  extraServices(first: 5) {\n    id\n    name\n    description\n    slas {\n      id\n    }\n  }\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "{{graphTestURL}}",
+							"host": [
+								"{{graphTestURL}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get service spaces",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "{\n  serviceSpaces(first: 5) {\n    id\n    name\n    startTime\n    endTime\n    slas {\n      id\n    }\n  }\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "{{graphTestURL}}",
+							"host": [
+								"{{graphTestURL}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get licenses",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "{\n  licenses(first: 5) {\n    id\n    name\n    slas {\n      id\n    }\n  }\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "{{graphTestURL}}",
+							"host": [
+								"{{graphTestURL}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get revision reports",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "{\n  revisionReports(first: 5) {\n    id\n    name\n    slas {\n      id\n    }\n  }\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "{{graphTestURL}}",
+							"host": [
+								"{{graphTestURL}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get billings",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "{\n  billings(first: 5) {\n    id\n    name\n    slas {\n      id\n    }\n  }\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "{{graphTestURL}}",
+							"host": [
+								"{{graphTestURL}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get billing methods",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "{\n  billingMethods(first: 5) {\n    id\n    name\n    slas {\n      id\n    }\n  }\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "{{graphTestURL}}",
+							"host": [
+								"{{graphTestURL}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get slas",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "{\n  slas(first: 5) {\n    id\n    startDate\n    automaticRenewal\n    creationDate\n    service {\n        id\n        name\n        description\n    }\n    extraService {\n        id\n        name\n        description\n    }\n    license {\n        id\n        name\n    }\n    revisionReport {\n        id\n        name\n    }\n    billing {\n        id\n        name\n    }\n    billingMethod {\n        id\n        name\n    }\n    totalPrice\n  }\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "{{graphTestURL}}",
+							"host": [
+								"{{graphTestURL}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Max total price",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "{\n    slas(orderBy: totalPrice, orderDirection: desc, first: 1) {\n        id\n        totalPrice\n    }\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "{{graphTestURL}}",
+							"host": [
+								"{{graphTestURL}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Min total price",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "{\n    slas(orderBy: totalPrice, orderDirection: asc, first: 1) {\n        id\n        totalPrice\n    }\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "{{graphTestURL}}",
+							"host": [
+								"{{graphTestURL}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get SLAs by date range",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "{\n    slas(where: {creationDate_gte: \"1650974870\", creationDate_lte: \"1650974880\"}) {\n        id\n        totalPrice\n    }\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "{{graphTestURL}}",
+							"host": [
+								"{{graphTestURL}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "The Graph BE",
+			"item": [
+				{
+					"name": "Get SLAs by date range",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{protocol}}://{{host}}{{port}}/theGraph/slas?start=1648764000000&end=1651356000000",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"theGraph",
+								"slas"
+							],
+							"query": [
+								{
+									"key": "start",
+									"value": "1648764000000",
+									"description": "01/04/2022"
+								},
+								{
+									"key": "end",
+									"value": "1651356000000",
+									"description": "01/05/2022"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get SLAs by SLA date range with service",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{protocol}}://{{host}}{{port}}/theGraph/services/",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"theGraph",
+								"services",
+								""
+							],
+							"query": [
+								{
+									"key": "start",
+									"value": "1648764000000",
+									"description": "01/04/2022",
+									"disabled": true
+								},
+								{
+									"key": "end",
+									"value": "1651356000000",
+									"description": "01/05/2022",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

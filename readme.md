@@ -32,7 +32,7 @@ Once you have a MySQL instance, you must execute the ***schema.sql*** file that 
 
 Next, you need to have Node.js installed on your machine. If you don't have it, visit the [Node page](https://nodejs.org/) and follow the installation steps for your environment.
 
-Then, from a console, run the following command to start the server at 2000 port:
+Then, from a console, run the following commands to start the server at 2000 port:
 ```
 npm install
 node app.js

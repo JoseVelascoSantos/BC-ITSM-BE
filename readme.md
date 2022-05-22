@@ -34,6 +34,7 @@ Next, you need to have Node.js installed on your machine. If you don't have it, 
 
 Then, from a console, run the following command to start the server at 2000 port:
 ```
+npm install
 node app.js
 ```
 *For testing without using the front-end, a collection of calls for [Postman](https://www.postman.com/) is provided along with the environment used for them. The calls are the **postman_collection.json** file and the environment is the **postman_environment.json** file.*

@@ -11,6 +11,8 @@ The first thing you need is to have the MetaMask extension in your browser (Chro
 
 Next, you need to connect MetaMask to Remix to finish deploying the smart contract by [following these steps](https://remix-ide.readthedocs.io/en/latest/create_deploy.html), where you need to select the "Injected Web3" option in the "ENVIROMENT" option.
 
+To finish this part, you must call the smart contract methods that allow you to add the elements (services, licenses...) of the SLA within it. This must be in accordance with the configuration of the elements of an SLA in the front-end.
+
 *The smart contract file is: **/Slink.sol***
 
 ### Steps to deploy the subgraph of The Graph:
